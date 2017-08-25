@@ -29,11 +29,35 @@ function discriminant(arr) {
 	else if (arr.length == 2)
 		return arr[0][0] * arr[1][1] - arr[0][1] * arr[1][0];
 	else {
-		return 0;
+		sign = true;
+		sum = 0;
+		for (var i = 0; i < arr.length; i++) {
+			for (var j = 0; j < arr[i].length; j++) {
+				var mini = createMatrix(arr, i, j);
+				if (sign)
+					sum += discriminant(mini);
+				else
+					sum -= discriminant(mini);
+				!sign;
+			}
+		}
+		return sum;
 	}
 }
 
-//in progress
+function createMatrix(arr, row, col) {
+	var mini = [];
+	for (var i = 0; i < arr.length; i++) {
+		var temp = [];
+		for (var j = 0; j < arr[i].length; j++) {
+			if (i != row && j != col)
+				temp[j] = arr[i][j];
+		}
+		mini[i] = temp;
+	}
+	return mini;
+}
+
 function calculate() {
 	matrix = [];
 	var rows = document.getElementsByClassName("row");
