@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<title>Matrix Determinant Calculator</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="calculator.js"></script>
+	<body onload = "initialize();">
+		<h1>Matrix Discriminant Calculator</h1>
+		<div>
+			<p>Matrix Size: <br />
+				<label><input type = "radio" name = "size" onclick = "changeSize(2);" checked /> 2 x 2 Matrix</label><br />
+				<label><input type = "radio" name = "size" onclick = "changeSize(3);" /> 3 x 3 Matrix</label><br />
+			</p>
+			<div id="inputs">
+			</div>
+		</div><br /><hr />
+		<button onclick = "calculate();">Calculate</button><br /><br />
+		<div id = "result">
+		</div>
+	</body>
+</html>
