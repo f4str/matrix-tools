@@ -2,8 +2,6 @@ function initialize() {
 	matrixSize = document.getElementById("size");
 	matrixDiv = document.getElementById("inputs");
 	resultDiv = document.getElementById("result");
-	
-	changeSize(2);
 }
 
 function changeSize(size) {
@@ -22,27 +20,46 @@ function changeSize(size) {
 	}
 }
 
-function determinant(arr) {
-	if (arr.length == 2)
-		return arr[0][0] * arr[1][1] - arr[0][1] * arr[1][0];
-	else if (arr.length == 3) {
-		var a = arr[0][0];
-		var b = arr[0][1];
-		var c = arr[0][2];
-		var d = arr[1][0];
-		var e = arr[1][1];
-		var f = arr[1][2];
-		var g = arr[2][0];
-		var h = arr[2][1];
-		var i = arr[2][2];
-		return a*(e*i - f*h) - b*(d*i - f*g) + c*(d*h - e*g);
-	}
-	else 
+//in progress
+function discriminant(arr) {
+	if (arr.length == 0)
 		return 0;
+	else if (arr.length == 1)
+		return arr[0];
+	else if (arr.length == 2)
+		return arr[0][0] * arr[1][1] - arr[0][1] * arr[1][0];
+	else {
+		sign = true;
+		sum = 0;
+		for (var i = 0; i < arr.length; i++) {
+			for (var j = 0; j < arr[i].length; j++) {
+				var mini = createMatrix(arr, i, j);
+				if (sign)
+					sum += discriminant(mini);
+				else
+					sum -= discriminant(mini);
+				!sign;
+			}
+		}
+		return sum;
+	}
+}
+
+function createMatrix(arr, row, col) {
+	var mini = [];
+	for (var i = 0; i < arr.length; i++) {
+		var temp = [];
+		for (var j = 0; j < arr[i].length; j++) {
+			if (i != row && j != col)
+				temp[j] = arr[i][j];
+		}
+		mini[i] = temp;
+	}
+	return mini;
 }
 
 function calculate() {
-	var matrix = [];
+	matrix = [];
 	var rows = document.getElementsByClassName("row");
 	for (var i = 0; i < rows.length; i++) {
 		var columns = rows[i].getElementsByClassName("column");
@@ -52,7 +69,7 @@ function calculate() {
 		}
 		matrix[i] = temp;
 	}
-	var det = determinant(matrix);
 	
+	var det = discriminant(matrix);
 	resultDiv.innerHTML = "Determinant: " + det;
 }
