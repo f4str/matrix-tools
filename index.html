@@ -1,20 +1,27 @@
 <!DOCTYPE HTML>
 <html>
-	<title>Matrix Determinant Calculator</title>
+
+<head>
+	<title>Matrix Tools</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="calculator.js"></script>
-	<body onload = "initialize();">
-		<h1>Matrix Discriminant Calculator</h1>
-		<div>
-			<p>Matrix Size: <input type="text" id="size" onchange="changeSize(this.value);" /></p>
-			<hr />
-			<div id="inputs">
-				Enter matrix size
-			</div>
-			<br />
-			<button onclick = "calculate();">Calculate</button>
-		</div><br />
-		<div id = "result">
-		</div>
-	</body>
+</head>
+
+<body onload="initialize();">
+	<h1>Matrix Tools</h1>
+	<div>
+		<p>Matrix Size: <input type="number" id="size" value="2" min="1" oninput="changeSize(this.value);" /></p>
+		<div id="inputs"></div><br>
+		<div id="options">
+			<input type="radio" name="options" value="rref">Reduced Row Echelon Form<br>
+			<input type="radio" name="options" value="determinant">Determinant<br>
+			<input type="radio" name="options" value="inverse">Inverse<br>
+		</div><br>
+		<button onclick="calculate();">Calculate</button>
+	</div><br>
+	<div id="result">
+
+	</div>
+</body>
+
 </html>
