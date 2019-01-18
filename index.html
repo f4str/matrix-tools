@@ -13,15 +13,19 @@
 		<p>Matrix Size: <input type="number" id="size" value="2" min="1" oninput="changeSize(this.value);" /></p>
 		<div id="inputs"></div><br>
 		<div id="options">
-			<input type="radio" name="options" value="rref">Reduced Row Echelon Form<br>
-			<input type="radio" name="options" value="determinant">Determinant<br>
-			<input type="radio" name="options" value="inverse">Inverse<br>
-		</div><br>
-		<button onclick="calculate();">Calculate</button>
-	</div><br>
-	<div id="result">
-
+			<input type="radio" name="options" value="1" id="rref"><label for="rref">Gauss Jordan</label><br>
+			<input type="radio" name="options" value="2" id="rank"><label for="rank">Rank</label><br>
+			<input type="radio" name="options" value="3" id="det"><label for="det">Determinant</label><br>
+			<input type="radio" name="options" value="4" id="inverse"><label for="inverse">Inverse</label><br>
+			<input type="radio" name="options" value="5" id="trace"><label for="trace">Trace</label><br>
+			<input type="radio" name="options" value="6" id="power"><label for="power">Power:</label> <input type="number" id="power" value="2" /><br>
+			<input type="radio" name="options" value="7" id="eigenvalues"><label for="eigenvalues">Eigenvalues</label><br>
+			<input type="radio" name="options" value="8" id="eigenvectors"><label for="eigenvectors">Eigenvectors</label><br>
+			<input type="radio" name="options" value="9" id="diagonalize"><label for="diagonalize">Diagonalize</label>
+		</div>
+		<p><button onclick="calculate();">Calculate</button></p>
 	</div>
+	<div id="result"></div>
 </body>
 
 </html>
