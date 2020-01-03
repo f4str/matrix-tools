@@ -1,0 +1,25 @@
+{
+  "name": "matrix-tools",
+  "version": "0.1.0",
+  "description": "Application for various matrix operations",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f4str/matrix-tools.git"
+  },
+  "author": "Farhan Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/f4str/matrix-tools/issues"
+  },
+  "homepage": "https://github.com/f4str/matrix-tools#readme",
+  "devDependencies": {
+    "electron": "^7.1.7"
+  },
+  "dependencies": {
+    "mathjs": "^6.3.0"
+  }
+}
