@@ -1,5 +1,5 @@
 function initialize() {
-	inputs = document.getElementById('inputs');
+	inputs = document.getElementById('matrix');
 	results = document.getElementById('result');
 
 	changeSize(2);
@@ -19,6 +19,16 @@ function changeSize(size) {
 			column.value = 0;
 			row.appendChild(column);
 		}
+	}
+}
+
+function augment(value) {
+	let vector = document.getElementById('vector');
+	if (value.checked) {
+		vector.innerHTML = "working on it";
+	}
+	else {
+		vector.innerHTML = "";
 	}
 }
 
@@ -43,7 +53,7 @@ function calculate() {
 		matrix[i] = row;
 	}
 	
-	switch(operation) {
+	switch (operation) {
 		case 0:
 			alert('Select an option');
 			break;

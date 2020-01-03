@@ -1,0 +1,18 @@
+.column {
+	width: 50px;
+	height: 25px;
+	text-align: center;
+}
+
+#inputs {
+	margin: auto;
+}
+
+#matrix {
+	float: left;
+	position: relative;
+}
+
+#vector {
+	position: relative;
+}
