@@ -20,6 +20,6 @@
     "electron": "^7.2.4"
   },
   "dependencies": {
-    "mathjs": "^6.3.0"
+    "mathjs": "^7.5.1"
   }
 }
